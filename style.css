@@ -7,8 +7,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ddd;
+  background-color: #eee;
   min-height: 100vh;
+}
+
+@media screen and (min-width:300px) and (max-width:500px) {
+  body {
+    background-color: #fff;
+  }
+  .box {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .bar input {
+    flex-basis: 70%;
+  }
+
+  .bar button {
+    flex-basis: 25%;
+  }
 }
 
 button {
@@ -32,9 +50,12 @@ h1 {
 }
 
 h2 {
-  font-size: 20px;
+  border-left: 4px solid #1E90FF;
+  padding-left: 5px;
+  font-size: 18px;
   margin: 20px 0;
   color: #333;
+  font-weight: 600;
 }
 
 .box {
@@ -56,33 +77,36 @@ h2 {
   width: 280px;
   padding: 5px 15px;
   box-sizing: border-box;
+  border-radius: 5px;
   font-size: 16px;
   border: 1px solid #ddd;
-  background-color: #ddd;
+  background-color: #eee;
   line-height: 30px;
-  transition: all 200ms ease-in;
+  transition: all 100ms ease-in;
 }
 
 .bar input:hover {
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .bar input:focus {
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .bar button {
   cursor: pointer;
   width: 100px;
   height: 40px;
+  border-radius: 5px;
   border: 1px solid #ddd;
   background-color: #eee;
-  transition: all 80ms ease-in;
+  transition: all 100ms ease-in;
   font-size: 16px;
 }
 
 .bar button:hover {
   border: 2px solid #1E90FF;
+  background-color: #fff;
 }
 
 .bar button:active {
@@ -97,7 +121,7 @@ ul {
 ul li {
   padding: 0 10px;
   display: flex;
-  height: 40px;
+  min-height: 40px;
   list-style: none;
   justify-content: space-between;
   align-items: center;
@@ -111,25 +135,34 @@ ul li button {
   width: 50px;
   cursor: pointer;
   line-height: 26px;
-  background-color: #eee;
+  color: #fff;
+  background-color: #F08080;
   border: 1px solid #fff;
   transition: all 100ms ease-out;
+  border-radius: 5px;
 }
 
 ul li button:hover {
-  border: 1px solid #F08080;
+  background: #CD5C5C;
 }
 
-ul li button:active {
-  border: 1px solid #F08080;
-}
 
 ul li p {
-  font-size: 18px;
+  font-size: 16px;
+  max-width: 300px;
 }
 
 .check {
   height: 16px;
   width: 16px;
   cursor: pointer;
+}
+
+ul li {
+  animation: fadein 100ms ease-in forwards;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
